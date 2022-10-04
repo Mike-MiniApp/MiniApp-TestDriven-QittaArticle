@@ -16,6 +16,10 @@
 		95680B1428EBCFC300FDDBBC /* MiniApp_TestDriven_QittaArticleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95680B1328EBCFC300FDDBBC /* MiniApp_TestDriven_QittaArticleUITestsLaunchTests.swift */; };
 		95680B2228EBD02200FDDBBC /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95680B2028EBD02200FDDBBC /* ArticleListViewController.swift */; };
 		95680B2328EBD02200FDDBBC /* ArticleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95680B2128EBD02200FDDBBC /* ArticleListViewController.xib */; };
+		95680B2528EBE9C700FDDBBC /* ArticleListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95680B2428EBE9C700FDDBBC /* ArticleListViewControllerTests.swift */; };
+		95680B2A28EBED8F00FDDBBC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95680B2928EBED8F00FDDBBC /* Article.swift */; };
+		95680B2D28EBEE7C00FDDBBC /* ArticleListAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95680B2C28EBEE7C00FDDBBC /* ArticleListAPIClientProtocol.swift */; };
+		95680B2F28EBF00700FDDBBC /* ArticleListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95680B2E28EBF00700FDDBBC /* ArticleListAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		95680B1328EBCFC300FDDBBC /* MiniApp_TestDriven_QittaArticleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniApp_TestDriven_QittaArticleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		95680B2028EBD02200FDDBBC /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		95680B2128EBD02200FDDBBC /* ArticleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListViewController.xib; sourceTree = "<group>"; };
+		95680B2428EBE9C700FDDBBC /* ArticleListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewControllerTests.swift; sourceTree = "<group>"; };
+		95680B2928EBED8F00FDDBBC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		95680B2C28EBEE7C00FDDBBC /* ArticleListAPIClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListAPIClientProtocol.swift; sourceTree = "<group>"; };
+		95680B2E28EBF00700FDDBBC /* ArticleListAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,15 @@
 		95680AEF28EBCFC200FDDBBC /* MiniApp-TestDriven-QittaArticle */ = {
 			isa = PBXGroup;
 			children = (
+				95680B2B28EBEE6100FDDBBC /* Protocol */,
+				95680B2728EBECDD00FDDBBC /* Models */,
+				95680B2628EBECCA00FDDBBC /* Views */,
+				95680B2828EBED0600FDDBBC /* Controllers */,
 				95680AF028EBCFC200FDDBBC /* AppDelegate.swift */,
 				95680AF228EBCFC200FDDBBC /* SceneDelegate.swift */,
 				95680AF928EBCFC300FDDBBC /* Assets.xcassets */,
 				95680AFB28EBCFC300FDDBBC /* LaunchScreen.storyboard */,
 				95680AFE28EBCFC300FDDBBC /* Info.plist */,
-				95680B2028EBD02200FDDBBC /* ArticleListViewController.swift */,
-				95680B2128EBD02200FDDBBC /* ArticleListViewController.xib */,
 			);
 			path = "MiniApp-TestDriven-QittaArticle";
 			sourceTree = "<group>";
@@ -114,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				95680B0728EBCFC300FDDBBC /* MiniApp_TestDriven_QittaArticleTests.swift */,
+				95680B2428EBE9C700FDDBBC /* ArticleListViewControllerTests.swift */,
 			);
 			path = "MiniApp-TestDriven-QittaArticleTests";
 			sourceTree = "<group>";
@@ -125,6 +136,39 @@
 				95680B1328EBCFC300FDDBBC /* MiniApp_TestDriven_QittaArticleUITestsLaunchTests.swift */,
 			);
 			path = "MiniApp-TestDriven-QittaArticleUITests";
+			sourceTree = "<group>";
+		};
+		95680B2628EBECCA00FDDBBC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95680B2128EBD02200FDDBBC /* ArticleListViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		95680B2728EBECDD00FDDBBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95680B2928EBED8F00FDDBBC /* Article.swift */,
+				95680B2E28EBF00700FDDBBC /* ArticleListAPIClient.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95680B2828EBED0600FDDBBC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95680B2028EBD02200FDDBBC /* ArticleListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		95680B2B28EBEE6100FDDBBC /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				95680B2C28EBEE7C00FDDBBC /* ArticleListAPIClientProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95680B2A28EBED8F00FDDBBC /* Article.swift in Sources */,
 				95680B2228EBD02200FDDBBC /* ArticleListViewController.swift in Sources */,
 				95680AF128EBCFC200FDDBBC /* AppDelegate.swift in Sources */,
 				95680AF328EBCFC200FDDBBC /* SceneDelegate.swift in Sources */,
+				95680B2F28EBF00700FDDBBC /* ArticleListAPIClient.swift in Sources */,
+				95680B2D28EBEE7C00FDDBBC /* ArticleListAPIClientProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95680B0828EBCFC300FDDBBC /* MiniApp_TestDriven_QittaArticleTests.swift in Sources */,
+				95680B2528EBE9C700FDDBBC /* ArticleListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

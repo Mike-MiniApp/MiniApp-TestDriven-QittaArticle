@@ -6,14 +6,20 @@
 //
 
 import XCTest
+import SafariServices
 @testable import MiniApp_TestDriven_QittaArticle
 
 final class ArticleListViewControllerTests: XCTestCase {
 
-    func test_タイトルが表示されていること() {
-        let article = Article(title: "記事タイトル")
+    var vc: ArticleListViewController!
+
+    override func setUp() {
+        let article = Article(title: "記事タイトル", url: "http://test")
         let client = FakeArticleListAPIClient(fakeResponse: [article])
-        let vc = ArticleListViewController(client: client)
+        vc = ArticleListViewController(client: client)
+    }
+
+    func test_タイトルが表示されていること() {
         let window = UIWindow()
         window.rootViewController = vc
         window.makeKeyAndVisible()
@@ -22,14 +28,12 @@ final class ArticleListViewControllerTests: XCTestCase {
         XCTAssertEqual(cell.titleLabel.text, "記事タイトル")
     }
 
-    func test_タイトルが表示されていること2() {
-        let article = Article(title: "記事タイトル2")
-        let client = FakeArticleListAPIClient(fakeResponse: [article])
-        let vc = ArticleListViewController(client: client)
+    func test_記事をタップして詳細画面が表示されること() {
         let window = UIWindow()
         window.rootViewController = vc
         window.makeKeyAndVisible()
-        XCTAssertEqual(vc.titleLabel.text, "記事タイトル2")
+        vc.tableView(vc.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertTrue(vc.presentedViewController is SFSafariViewController)
     }
 }
 

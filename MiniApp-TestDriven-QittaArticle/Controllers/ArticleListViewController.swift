@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ArticleListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -45,11 +46,18 @@ extension ArticleListViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListCell.identifier, for: indexPath) as? ArticleListCell else { fatalError("The dequeued cell is not instance")}
         let article = items[indexPath.row]
-        cell.titleLabel.text = article.title
+        cell.configure(title: article.title)
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = URL(string: items[indexPath.row].url)else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController,animated: true,completion: nil)
+    }
 }
+
